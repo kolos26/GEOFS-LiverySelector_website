@@ -1,0 +1,65 @@
+baseURL = "/"
+languageCode = "en"
+title = "GeoFS LiverySelector"
+theme = "hugo-initio"
+
+[params]
+    name = "GeoFS LiverySelector"
+    description = "Unified livery handler addon for GeoFS"
+    #email = "anthony.russel42@example.com"
+    #phone = "+234 23 9873237"
+    #address = "234 Hidden Pond Road, Ashland City, TN 37015"
+    year = 2022
+    avatar = "images/liveryselector-logo.svg"
+    avatarclass = "rounded"
+    background = ""
+    banner = "images/header.png"
+    favicon = "images/liveryselector-logo-small.ico"
+    DateForm = "January 2, 2006"
+    author = "Kolos26"
+
+    showSubheader = false
+    showServices = false
+    showRecentWorks = false
+    showDownloads = true
+    showClients = false
+
+    showFooterContact = false
+    showFooterFollowMe = true
+    showFooterTextWidget = false
+    showFooterFormWidget = false
+
+[[menu.main]]
+    name = "home"
+    url = "/"
+    weight = 1
+[[menu.main]]
+    name = "blog"
+    url = "/post/"
+    weight = 20
+[[menu.main]]
+    name = "Liveries"
+    url = "/liveries/"
+    weight = 10
+
+[params.disqus]
+    # site = "hugo-initio-site.disqus.com"
+
+[params.sharethis]
+    # property = "123456789012345678901234"
+    # custom = true
+
+[params.google.analytics]
+    # trackerID = "GA-000000000-0"
+
+
+[[params.social]]
+	title = "github"
+	url = "https://github.com/kolos26/GEOFS-LiverySelector"
+    icon = "fab fa-github"
+    footer = true
+    sharethis = false
+    network = ""
+
+[markup.goldmark.renderer]
+    unsafe= true
