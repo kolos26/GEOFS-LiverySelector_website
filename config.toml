@@ -41,6 +41,10 @@ theme = "hugo-initio"
     name = "Liveries"
     url = "/liveries/"
     weight = 10
+[[menu.main]]
+    name = "Issues"
+    url = "https://github.com/kolos26/GEOFS-LiverySelector/issues"
+    weight = 100
 
 [params.disqus]
     # site = "hugo-initio-site.disqus.com"
