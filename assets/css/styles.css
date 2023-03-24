@@ -255,7 +255,8 @@ html {
     font-family: Helvetica,Arial,sans-serif;
     font-size: 49px;
     font-size: 3.0625rem;
-    color: white;
+    text-shadow: 2px 2px 5px #000000;
+    color: #ffffff;
   }
   #head .title a {
     text-decoration: none;
@@ -263,11 +264,12 @@ html {
   }
   #head .tagline {
     display: block;
-    font-size: 14px;
+    font-size: 18px;
     font-size: 0.875rem;
     line-height: 1.2em;
     color: #ffffff;
     margin: 5px 0 0;
+    text-shadow: 2px 2px 5px #000000;
   }
   #head .tagline b {
     font-weight: normal;
@@ -284,7 +286,7 @@ html {
   }
   .home #head .tagline {
     font-size: 16px;
-    font-size: 1rem;
+    font-size: 1.2rem;
     margin: 15px 0 0;
   }
   /*********************************************************************
