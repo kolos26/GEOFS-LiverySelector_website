@@ -129,7 +129,7 @@ layout: single
 <th>Available liveries</th>
 </table>
 
-## Colomban Cri-Cri
+## Colomban MC-15 Cri-Cri
 <table id="14">
 <th>Available liveries</th>
 </table>
