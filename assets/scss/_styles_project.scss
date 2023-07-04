@@ -1,0 +1,43 @@
+/*
+
+Nothing defined here. The Hugo project that uses this theme can override Bootstrap by adding a file to:
+
+assets/scss/_styles_project.scss
+
+*/
+
+// Main-page specific customizations
+.lead-text {
+  line-height: 1.8;
+}
+
+.td-toc {
+  padding-top: 1rem;
+}
+
+.avatar_image {
+  border-radius: 20px;
+  background-color: rgba(74, 74, 74, 0.5);
+  height: 140px;
+  padding: 30px 0 35px 0;
+
+}
+
+#td-cover-block-0 h1 {
+  font-family: Helvetica,Arial,sans-serif;
+  font-size: 49px;
+  font-size: 3.0625rem;
+  text-shadow: 2px 2px 5px #000000;
+  color: #ffffff;
+}
+
+#td-cover-block-0 .lead {
+  display: block;
+  font-family: open sans,Helvetica,Arial,sans-serif;
+  font-weight: 400;
+  font-size: 1.2rem;
+  line-height: 1.2em;
+  color: #ffffff;
+  margin: 5px 0 0;
+  text-shadow: 2px 2px 5px #000000;
+}
