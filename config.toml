@@ -30,19 +30,19 @@ theme = "docsy"
     showFooterFormWidget = false
 
 [[menu.main]]
-    name = "home"
+    name = "HOME"
     url = "/"
     weight = 1
 [[menu.main]]
-    name = "blog"
-    url = "/post/"
+    name = "BLOG"
+    url = "/blog/"
     weight = 20
 [[menu.main]]
-    name = "Liveries"
+    name = "LIVERIES"
     url = "/liveries/"
     weight = 10
 [[menu.main]]
-    name = "Issues"
+    name = "ISSUES"
     url = "https://github.com/kolos26/GEOFS-LiverySelector/issues"
     weight = 100
 
