@@ -1,7 +1,6 @@
 ---
 title: Liveries
-type: liveries
-layout: single
+type: docs
 ---
 
 <style>
