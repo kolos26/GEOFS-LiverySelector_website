@@ -41,3 +41,14 @@ assets/scss/_styles_project.scss
   margin: 5px 0 0;
   text-shadow: 2px 2px 5px #000000;
 }
+/* Fix site title color in the navbar*/
+.td-navbar .navbar-brand__name {
+  color: $navbar-dark-color;
+}
+
+.td-navbar-cover .nav-link {
+  text-shadow: none;
+  font-family: open sans,Helvetica,Arial,sans-serif;
+  font-weight: 300;
+}
+
