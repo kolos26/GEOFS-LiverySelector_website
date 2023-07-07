@@ -12,11 +12,11 @@ defaultContentLanguageInSubdir = false
 # Useful when translating.
 enableMissingTranslationPlaceholders = true
 
-copyright = "Kolos26"
-
 [params]
     name = "GeoFS LiverySelector"
     description = "Unified livery handler addon for GeoFS"
+
+    copyright = "Kolos26"
 
     jstoc.enable = true # Use tocbot on the liveries page
 
