@@ -647,7 +647,9 @@ html {
   #nav-below b {
     display: none;
   }
-  footer.entry-meta {
+/* 
+  ## We use the docsy footer, so there is no need for this
+    footer.entry-meta {
     border-top: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
     margin: 0 0 35px 0;
@@ -663,7 +665,7 @@ html {
     border-top: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
     padding: 10px 0;
-  }
+  }*/
   .page-header {
     padding-bottom: 0;
     margin: 0;

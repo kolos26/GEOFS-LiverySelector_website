@@ -6,6 +6,10 @@ assets/scss/_styles_project.scss
 
 */
 
+// Imports the old css file from the old theme for the main homepage
+
+@import "/assets/css/styles.css";
+
 // Main-page specific customizations
 .lead-text {
   line-height: 1.8;
