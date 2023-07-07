@@ -20,6 +20,10 @@ enableMissingTranslationPlaceholders = true
 
     jstoc.enable = true # Use tocbot on the liveries page
 
+    # Repository configuration (URLs for in-page links to opening issues and suggesting changes)
+    github_repo = "https://github.com/kolos26/GEOFS-LiverySelector/"
+
+
     #email = "anthony.russel42@example.com"
     #phone = "+234 23 9873237"
     #address = "234 Hidden Pond Road, Ashland City, TN 37015"
