@@ -59,3 +59,7 @@ assets/scss/_styles_project.scss
   font-weight: 300;
 }
 
+// Fix color of the navbar links on hover
+.nav-link:hover {
+  color: #ddd;
+}
