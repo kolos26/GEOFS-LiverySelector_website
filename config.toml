@@ -17,6 +17,9 @@ copyright = "Kolos26"
 [params]
     name = "GeoFS LiverySelector"
     description = "Unified livery handler addon for GeoFS"
+
+    jstoc.enable = true # Use tocbot on the liveries page
+
     #email = "anthony.russel42@example.com"
     #phone = "+234 23 9873237"
     #address = "234 Hidden Pond Road, Ashland City, TN 37015"
