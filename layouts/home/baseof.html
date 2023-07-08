@@ -1,12 +1,7 @@
 <!DOCTYPE html>
-<html lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en{{ end }}">
+<html itemscope itemtype="http://schema.org/WebPage" lang="{{ .Site.Language.Lang }}" class="no-js">
   <head>
-  	<meta charset="utf-8">
-  	<meta name="viewport"    content="width=device-width, initial-scale=1.0">
-  	<meta name="description" content="">
-  	<meta name="author"      content="{{ .Site.Author }}">
-    
-    {{ partial "home/head/head.html" . }}
+    {{ partial "head.html" . }}
   </head>
   
   <body class="home">
