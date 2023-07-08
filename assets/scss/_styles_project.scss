@@ -7,7 +7,7 @@ assets/scss/_styles_project.scss
 */
 
 // Imports the old css file from the old theme for the main homepage
-@import "/assets/css/styles.css";
+@import "../css/styles";
 
 // For the liveries page toc
 @import "tocbot";
@@ -48,6 +48,7 @@ assets/scss/_styles_project.scss
   margin: 5px 0 0;
   text-shadow: 2px 2px 5px #000000;
 }
+
 /* Fix site title color in the navbar*/
 .td-navbar .navbar-brand__name {
   color: $navbar-dark-color;
@@ -59,7 +60,17 @@ assets/scss/_styles_project.scss
   font-weight: 300;
 }
 
-// Fix color of the navbar links on hover
+// Fix color of the navbar links on the subpages on hover
 .nav-link:hover {
   color: #ddd;
+}
+
+// Fix the alignment of the navbar menu on the home page
+body.home ul.nav.navbar-nav {
+  display: block;
+}
+
+// Fix page length on the home page
+body.home div.td-outer {
+  min-height: auto;
 }
