@@ -1,20 +1,56 @@
-	<title>{{ .Title }}</title>
-	<link rel="shortcut icon" href="{{ .Site.BaseURL }}{{ .Site.Params.favicon }}">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+{{ hugo.Generator }}
+{{ range .AlternativeOutputFormats -}}
+<link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink | safeURL }}">
+{{ end -}}
 
-	<!-- Bootstrap -->
-	<link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.no-icons.min.css" rel="stylesheet">
-	
-	<!-- Icons -->
-	<script defer src="https://use.fontawesome.com/releases/v5.0.11/js/all.js" integrity="sha384-ImVoB8Er8knetgQakxuBS4G3RSkyD8IZVVQCAnmRJrDwqJFYUE4YOv+DbIofcO9C" crossorigin="anonymous"></script>
-	
-	<!-- Fonts -->
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alice|Open+Sans:400,300,700">
-	
-	{{ $styles := resources.Get "css/styles.css" }}
-  {{ $css := $styles | resources.Minify | resources.Fingerprint "sha512"  }}
-  <link rel="stylesheet" href="{{ $css.Permalink }}" integrity="{{ $css.Data.Integrity }}">
+{{ $outputFormat := partial "outputformat.html" . -}}
+{{ if and hugo.IsProduction (ne $outputFormat "print") -}}
+<meta name="robots" content="index, follow">
+{{ else -}}
+<meta name="robots" content="noindex, nofollow">
+{{ end -}}
 
-  <!-- Share this --> 
-  {{ if .Site.Params.customsharethis }}
-	<script type="text/javascript" src="//platform-api.sharethis.com/js/sharethis.js#property={{ .Site.Params.sharethis.property }}&product=custom-share-buttons"></script>
-	{{ end }}
+{{ partialCached "favicons.html" . }}
+<title>
+  {{- if .IsHome -}}
+    {{ .Site.Title -}}
+  {{ else -}}
+    {{ with .Title }}{{ . }} | {{ end -}}
+    {{ .Site.Title -}}
+  {{ end -}}
+</title>
+<meta name="description" content="{{ template "partials/page-description.html" . }}">
+{{ template "_internal/opengraph.html" . -}}
+{{ template "_internal/schema.html" . -}}
+{{ template "_internal/twitter_cards.html" . -}}
+
+<!-- This file is identical with the Docsy head.html partial, just loads the 3.0 bootstrap css for the menu in the home/head-css.html -->
+{{ partialCached "home/head-css.html" . "asdf" -}}
+<script
+  src="https://code.jquery.com/jquery-3.6.3.min.js"
+  integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ=="
+  crossorigin="anonymous"></script>
+{{ if .Site.Params.offlineSearch -}}
+<script defer
+  src="https://unpkg.com/lunr@2.3.9/lunr.min.js"
+  integrity="sha384-203J0SNzyqHby3iU6hzvzltrWi/M41wOP5Gu+BiJMz5nwKykbkUx8Kp7iti0Lpli"
+  crossorigin="anonymous"></script>
+{{ end -}}
+
+{{ if .Site.Params.prism_syntax_highlighting -}}
+<link rel="stylesheet" href="{{ "css/prism.css" | relURL }}"/>
+{{ end -}}
+
+{{ partial "hooks/head-end.html" . -}}
+
+{{/* To comply with GDPR, cookie consent scripts places in head-end must execute before Google Analytics is enabled */ -}}
+{{ if hugo.IsProduction -}}
+  {{ $enableGtagForUniversalAnalytics := not .Site.Params.disableGtagForUniversalAnalytics -}}
+  {{ if (or $enableGtagForUniversalAnalytics (hasPrefix .Site.GoogleAnalytics "G-")) -}}
+    {{ template "_internal/google_analytics_gtag.html" . -}}
+  {{ else -}}
+    {{ template "_internal/google_analytics_async.html" . -}}
+  {{ end -}}
+{{ end -}}
