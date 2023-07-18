@@ -38,6 +38,7 @@ enableMissingTranslationPlaceholders = true
 
     showSubheader = false
     showServices = false
+    showBlogs = true
     showRecentWorks = false
     showDownloads = true
     showClients = false

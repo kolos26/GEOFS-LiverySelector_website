@@ -1,0 +1,12 @@
+<h2 class="section-title">
+    <span>Recent news</span>
+</h2>
+<div class="row section topspace">
+    {{ range first 3 ((site.GetPage "blog").Pages) }}
+    <div class="col-sm-6 col-md-4">
+        <h3 class="text-center">{{ .Title }}</h3>
+        <p>{{ .Summary }}</p>
+        <p class="text-center"><a href="{{ .Permalink }}" class="btn btn-action">Read more</a></p>
+      </div>
+    {{ end }}
+</div> <!-- /section -->

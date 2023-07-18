@@ -13,6 +13,7 @@
                 {{ if (or (and (eq $stype "service") (.Site.Params.showServices))
                           (and (eq $stype "recentwork") (.Site.Params.showRecentWorks))
                           (and (eq $stype "download") (.Site.Params.showDownloads))
+                          (and (eq $stype "blog") (.Site.Params.showBlogs))
                           (and (eq $stype "client") (.Site.Params.showClients))
                           (eq $stype "single")) }}
 
@@ -29,6 +30,9 @@
                      {{ else if eq $stype "download" }}
                        {{ partial "home/download.html" . }}
 
+                    {{ else if eq $stype "blog" }}
+                       {{ partial "list-recent-blogs.html" . }}
+
                      {{ else if eq $stype "client" }}
                        {{ partial "home/clients.html" . }}
 
@@ -40,6 +44,8 @@
               {{ end }}
             {{ end }}
         {{ end }}
+        {{ partial "list-recent-blogs.html" . }}
+
     </div>	<!-- /container -->
   </main>
 
