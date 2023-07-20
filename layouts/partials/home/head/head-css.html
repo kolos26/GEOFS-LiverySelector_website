@@ -1,0 +1,13 @@
+<!-- This file is identical with the Docsy head.html partial, just loads the 3.0 bootstrap css for the menu -->
+<link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.no-icons.min.css" rel="stylesheet">
+
+{{ $scssMain := "scss/main.scss"}}
+{{ if not hugo.IsProduction }}
+{{/* Note the missing postCSS. This makes it snappier to develop in Chrome, but makes it look sub-optimal in other browsers. */}}
+{{ $css := resources.Get $scssMain | toCSS (dict "enableSourceMap" true) }}
+<link href="{{ $css.RelPermalink }}" rel="stylesheet">
+{{ else }}
+{{ $css := resources.Get $scssMain | toCSS (dict "enableSourceMap" false) | postCSS | minify | fingerprint }}
+<link rel="preload" href="{{ $css.RelPermalink }}" as="style">
+<link href="{{ $css.RelPermalink }}" rel="stylesheet" integrity="{{ $css.Data.integrity }}">
+{{ end }}

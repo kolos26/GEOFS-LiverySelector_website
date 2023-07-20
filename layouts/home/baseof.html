@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="{{ .Site.Language.Lang }}" class="no-js">
+  <head>
+    {{ partial "head.html" . }}
+  </head>
+  
+  <body class="home">
+
+    {{ block "header" . }}
+      {{ partial "home/head/header.html" . }}
+    {{ end }}
+    <div class="container-fluid td-outer">
+
+    {{ block "main" . }}
+    {{ end }}
+    
+    {{ partial "footer.html" . }}
+    </div>
+    {{ partialCached "scripts.html" . }}
+
+  </body>
+  
+</html>
